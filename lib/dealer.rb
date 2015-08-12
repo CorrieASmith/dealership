@@ -9,6 +9,16 @@ class Dealership
     @@dealerships
   end
 
+  define_singleton_method(:find) do |id|
+    found_dealer = nil
+    @@dealerships.each() do |dealer|
+      if dealer.id().eql?(id)
+        found_dealer = dealer
+      end
+    end
+    found_dealer
+  end
+
   define_method(:initialize) do |name|
     @name = name
     @id = @@dealerships.length().+(1)
