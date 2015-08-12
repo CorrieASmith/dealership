@@ -27,6 +27,16 @@ describe(Dealership) do
       test_dealer = Dealership.new("My Dealer")
       expect(test_dealer.cars()).to(eq([]))
     end
+
+    it("Takes in multiple cars, returns cars list") do
+      test_dealer = Dealership.new("My Dealer")
+      test_car1 = Vehicle.new("Honda", "Civic", 2000)
+      test_car2 = Vehicle.new("Audi", "A8", 2014)
+      test_dealer.add_vehicle(test_car1)
+      test_dealer.add_vehicle(test_car2)
+      expect(test_dealer.cars()).to(eq([test_car1, test_car2]))
+    end
+
   end
 
   describe('#save') do
