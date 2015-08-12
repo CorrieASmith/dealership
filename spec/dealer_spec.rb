@@ -42,6 +42,11 @@ describe(Dealership) do
     end
   end
 
-  
-
+  describe(".clear") do
+    it("empties out all of the saved dealerships") do
+      Dealership.new("My Dealer").save()
+      Dealership.clear()
+      expect(Dealership.all()).to(eq([]))
+    end
+  end
 end
