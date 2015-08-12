@@ -1,16 +1,23 @@
 class Dealership
   @@dealerships = []
 
-define_method(:initialize) do |name|
-  @name = name
-  @id = @@dealerships.length().+(1)
-  @cars = []
+  define_singleton_method(:clear) do
+    @@dealerships = []
+  end
 
-end
+  define_method(:initialize) do |name|
+    @name = name
+    @id = @@dealerships.length().+(1)
+    @cars = []
 
-define_method(:name) do
-  @name
-end
+  end
 
+  define_method(:name) do
+    @name
+  end
+
+  define_method(:id) do
+    @id
+  end
 
 end
